@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f1">
+  <meta name="description" content="Find your next favorite recipe with Crumb & Herb, a little inspiration for the meals you'll remember.">
+  <title>Crumb &amp; Herb | Digital Recipe Book</title>
+  <link rel="canonical" href="https://crumbherbfoods.lk/">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand brand" href="#home" aria-label="Crumb and Herb home">
+        <span class="brand-mark" aria-hidden="true">✳</span> crumb &amp; herb
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#recipes">Recipes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Our Story</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="auth/login.php" class="login-link" id="loginAction">Login</a>
+          <a href="auth/register.php" class="btn btn-orange nav-cta" id="joinAction">
+            Join the kitchen <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero-section" id="home" aria-labelledby="heroTitle">
+      <div class="container hero-intro">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true">✳</span> YOUR DAILY DOSE OF DELICIOUS</p>
+          <h1 id="heroTitle">Cook something<br><em>wonderful.</em></h1>
+          <p class="hero-description">A little inspiration for the meals you'll remember. Find your next favorite, one recipe at a time.</p>
+
+          <form class="search-form" id="searchForm" role="search">
+            <label class="visually-hidden" for="searchInput">Search recipes</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="searchInput" placeholder="Find your next favorite..." autocomplete="off">
+            <button type="submit">Search <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="search-suggestions" aria-label="Popular searches">
+            <span>TRY:</span>
+            <button type="button" class="suggestion" data-search="Pasta">Pasta</button>
+            <button type="button" class="suggestion" data-search="Breakfast">Breakfast</button>
+            <button type="button" class="suggestion" data-search="Salad">Salad</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container slider-container">
+        <div class="hero-slider" id="foodSlider" aria-label="Food photography">
+          <div class="hero-slides">
+            <div class="hero-slide active">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="A plate of pasta with fresh herbs" fetchpriority="high">
+            </div>
+            <div class="hero-slide">
+              <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Colorful salad with fresh vegetables">
+            </div>
+            <div class="hero-slide">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Freshly baked pizza topped with vegetables">
+            </div>
+            <div class="hero-slide">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="A nourishing breakfast spread">
+            </div>
+            <div class="hero-slide">
+              <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="A berry-topped dessert ready to share">
+            </div>
+          </div>
+        </div>
+        <div class="slider-toolbar">
+          <span class="slider-label">A FEAST FOR THE EYES</span>
+          <div class="slider-controls" aria-label="Image slider controls">
+            <button type="button" id="prevSlide" aria-label="Previous image">←</button>
+            <span id="slideCount" aria-live="polite">01 / 05</span>
+            <button type="button" id="nextSlide" aria-label="Next image">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recipe-section" id="recipes" aria-labelledby="recipeHeading">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">A LITTLE SOMETHING FOR EVERYONE</p>
+            <h2 id="recipeHeading">Fresh picks <em>for you.</em></h2>
+            <p class="section-description">Simple ideas, lovely ingredients, and something delicious for every day.</p>
+          </div>
+          <div class="recipe-count" aria-label="Eight recipes to explore"><span>08</span><small>RECIPES<br>TO EXPLORE</small></div>
+        </div>
+
+        <div class="category-row" id="categoryRow" aria-label="Filter recipes by category">
+          <button class="category-chip active" type="button" data-category="All" aria-pressed="true">All recipes <span>08</span></button>
+          <button class="category-chip" type="button" data-category="Breakfast" aria-pressed="false">Breakfast</button>
+          <button class="category-chip" type="button" data-category="Lunch" aria-pressed="false">Lunch</button>
+          <button class="category-chip" type="button" data-category="Dinner" aria-pressed="false">Dinner</button>
+          <button class="category-chip" type="button" data-category="Dessert" aria-pressed="false">Dessert</button>
+        </div>
+        <a class="community-link" href="recipes.php">Explore community recipes <span aria-hidden="true">↗</span></a>
+
+        <div class="row g-4" id="recipeGrid">
+          <?php foreach ($featuredRecipes as $index => $recipe): ?>
+          <div class="col-sm-6 col-lg-3 recipe-item" data-name="<?= crumb_escape(strtolower($recipe['title'])) ?>" data-category="<?= crumb_escape($recipe['category']) ?>" data-tags="<?= crumb_escape(strtolower($recipe['title'] . ' ' . $recipe['category'])) ?>">
+            <article class="recipe-card">
+              <a class="recipe-card-link-overlay" href="recipe-details.php?id=<?= (int)$recipe['id'] ?>" aria-label="View <?= crumb_escape($recipe['title']) ?> recipe details"></a>
+              <div class="recipe-image">
+                <img src="<?= crumb_escape($recipe['image_url'] ?: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=85') ?>" alt="<?= crumb_escape($recipe['title']) ?>" loading="lazy">
+                <button class="save-btn" type="button" aria-label="Save <?= crumb_escape($recipe['title']) ?>" aria-pressed="false">♡</button>
+              </div>
+              <div class="recipe-meta"><span><span class="recipe-number"><?= str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT) ?></span> <?= crumb_escape(strtoupper($recipe['category'])) ?></span><span>◷ <?= (int)$recipe['cooking_time'] ?> MIN</span></div>
+              <h3><?= crumb_escape($recipe['title']) ?></h3><p><?= crumb_escape($featuredDescriptions[$recipe['title']] ?? 'A lovely recipe to share.') ?></p>
+            </article>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <p class="empty-message" id="emptyMessage" hidden>No recipes found. Try another search.</p>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="aboutHeading">
+      <div class="container about-inner">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="A table set with a fresh, colorful meal" loading="lazy">
+          <div class="about-note"><span aria-hidden="true">✳</span> A little inspiration, every day</div>
+        </div>
+        <div class="about-card">
+          <p class="section-kicker">A SEAT AT OUR TABLE</p>
+          <h2 id="aboutHeading">Good food brings<br><em>people together.</em></h2>
+          <p class="about-description">Crumb &amp; Herb is a little corner for curious cooks and happy home kitchens. We believe everyday meals can be a reason to slow down, try something new, and share a little joy.</p>
+          <p class="about-description">Find simple recipes, follow your appetite, and make each dish your own. There’s always room at the table for one more.</p>
+          <a href="#recipes" class="text-link">Find your next favorite <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contactHeading">
+      <div class="container contact-inner">
+        <div class="contact-info">
+          <p class="section-kicker">PULL UP A CHAIR</p>
+          <h2 id="contactHeading">Let’s make<br><em>something lovely.</em></h2>
+          <p>Questions, recipe ideas, or a dish you can’t wait to share? We’d love to hear from you.</p>
+          <address class="contact-details">
+            <a href="tel:+94702936583"><span aria-hidden="true">☎</span><span><small>PHONE</small>0702936583</span></a>
+            <a href="mailto:ipdamruwan2831@gmail.com"><span aria-hidden="true">✉</span><span><small>EMAIL</small>ipdamruwan2831@gmail.com</span></a>
+            <a href="https://maps.google.com/?q=22%2C+Punchi+Akurugoda%2C+Tissamaharama%2C+Sri+Lanka" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⌖</span><span><small>ADDRESS</small>22, Punchi Akurugoda,<br>Tissamaharama, Sri Lanka</span></a>
+            <a href="https://crumbherbfoods.lk/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span><span><small>WEBSITE</small>crumbherbfoods.lk</span></a>
+          </address>
+        </div>
+        <div class="contact-form-card">
+          <p class="contact-form-kicker">WE’RE ALL EARS</p>
+          <h3>Send us a little note.</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <label for="contactName">Your name</label>
+            <input type="text" id="contactName" name="name" placeholder="Enter your name" maxlength="100" autocomplete="name" required>
+            <label for="contactEmail">Email address</label>
+            <input type="email" id="contactEmail" name="email" placeholder="you@example.com" maxlength="190" autocomplete="email" required>
+            <label for="contactMessage">Your message</label>
+            <textarea id="contactMessage" name="message" rows="3" minlength="10" maxlength="3000" placeholder="Tell us what’s on your mind..." required></textarea>
+            <button type="submit" class="btn btn-orange">Send message <span aria-hidden="true">↗</span></button>
+            <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-block">
+          <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span> crumb &amp; herb</a>
+          <p>Made with care, served with joy.</p>
+        </div>
+        <div class="footer-contact">
+          <a href="tel:+94702936583">0702936583</a>
+          <a href="mailto:ipdamruwan2831@gmail.com">ipdamruwan2831@gmail.com</a>
+          <a href="https://maps.google.com/?q=22%2C+Punchi+Akurugoda%2C+Tissamaharama%2C+Sri+Lanka" target="_blank" rel="noopener noreferrer">22, Punchi Akurugoda, Tissamaharama, Sri Lanka</a>
+          <a href="https://crumbherbfoods.lk/" target="_blank" rel="noopener noreferrer">crumbherbfoods.lk</a>
+        </div>
+      </div>
+      <p class="footer-copyright">© 2026 Crumb &amp; Herb Recipe Book</p>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content auth-modal">
+        <div class="modal-header">
+          <div><p class="section-kicker">WELCOME BACK</p><h2 class="modal-title" id="loginTitle">Come on in.</h2></div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="loginForm" novalidate>
+          <div class="modal-body">
+            <label for="loginEmail">Email address</label>
+            <input class="auth-input" type="email" id="loginEmail" name="email" autocomplete="email" required>
+            <label for="loginPassword">Password</label>
+            <input class="auth-input" type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+            <p class="auth-feedback" id="loginFeedback" aria-live="polite"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-orange">Log in <span aria-hidden="true">↗</span></button>
+            <button type="button" class="modal-switch" data-bs-target="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal">New here? Join the kitchen</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content auth-modal">
+        <div class="modal-header">
+          <div><p class="section-kicker">A PLACE AT THE TABLE</p><h2 class="modal-title" id="registerTitle">Join the kitchen.</h2></div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="registerForm" novalidate>
+          <div class="modal-body">
+            <label for="registerUsername">Username</label>
+            <input class="auth-input" type="text" id="registerUsername" name="username" minlength="3" maxlength="50" autocomplete="username" required>
+            <label for="registerEmail">Email address</label>
+            <input class="auth-input" type="email" id="registerEmail" name="email" autocomplete="email" required>
+            <label for="registerPassword">Password <span class="input-hint">(at least 8 characters)</span></label>
+            <input class="auth-input" type="password" id="registerPassword" name="password" minlength="8" autocomplete="new-password" required>
+            <p class="auth-feedback" id="registerFeedback" aria-live="polite"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-orange">Create account <span aria-hidden="true">↗</span></button>
+            <button type="button" class="modal-switch" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Already a member? Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
